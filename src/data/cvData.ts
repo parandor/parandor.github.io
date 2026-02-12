@@ -1,8 +1,8 @@
 export const cv = {
   name: 'Peter Arandorenko',
   headline: 'Generative AI, Solutions Architecture, Robotics, AMR, CV, Innovation',
-  location: 'Mississauga, Ontario',
-  address: 'Mississauga, Ontario',
+  location: 'Mississauga, Ontario, Canada',
+  address: 'Mississauga, Ontario, Canada',
   email: 'parandorenko@gmail.com',
   photo: '/profile.jpg',
   lastUpdated: '2026-02-12',
