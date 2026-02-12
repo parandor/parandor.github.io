@@ -2,6 +2,12 @@ import { cv } from '../data/cvData'
 import { Section } from '../components/Section'
 
 export default function App() {
+  const toId = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '')
+
   return (
     <div className="page">
       <main id="content" className="content layout">
@@ -12,11 +18,16 @@ export default function App() {
           <div className="sideBlock">
             <div className="name">{cv.name}</div>
             <div className="headline">{cv.headline}</div>
-            <div className="location">{cv.location}</div>
+            <div className="location">{cv.address}</div>
           </div>
           <div className="sideBlock">
-            <a className="sideLink" href={`mailto:${cv.email}`}>
-              {cv.email}
+            {cv.contacts.map((contact) => (
+              <a key={contact.label} className="sideLink" href={contact.href}>
+                {contact.value}
+              </a>
+            ))}
+            <a className="sideLink" href={cv.website} target="_blank" rel="noreferrer">
+              {cv.website.replace('https://', '')}
             </a>
             {cv.links.map((link) => (
               <a
@@ -41,7 +52,7 @@ export default function App() {
           {cv.sections.map((section) => (
             <Section
               key={section.title}
-              id={section.title.toLowerCase()}
+              id={toId(section.title)}
               title={section.title}
             >
               <div className="stack">
