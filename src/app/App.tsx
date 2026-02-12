@@ -1,83 +1,106 @@
+import {
+  Anchor,
+  Badge,
+  Container,
+  Divider,
+  Group,
+  Image,
+  List,
+  Paper,
+  Stack,
+  Text,
+  Title,
+} from '@mantine/core'
 import { cv } from '../data/cvData'
-import { Section } from '../components/Section'
+
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <Stack gap={8}>
+      <Group gap="xs">
+        <Badge variant="light" color="dark">
+          {title}
+        </Badge>
+        <Divider style={{ flex: 1 }} />
+      </Group>
+      {children}
+    </Stack>
+  )
+}
 
 export default function App() {
-  const toId = (value: string) =>
-    value
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)/g, '')
-
   return (
     <div className="page">
-      <main id="content" className="content layout">
-        <aside className="sidebar">
-          <div className="photoWrap">
-            <img className="photo" src={cv.photo} alt={`${cv.name} headshot`} />
-          </div>
-          <div className="sideBlock">
-            <div className="name">{cv.name}</div>
-            <div className="headline">{cv.headline}</div>
-            <div className="location">{cv.address}</div>
-          </div>
-          <div className="sideBlock">
-            {cv.contacts.map((contact) => (
-              <a key={contact.label} className="sideLink" href={contact.href}>
-                {contact.value}
-              </a>
+      <Container size="xl" className="content">
+        <div className="layout">
+          <Paper className="sidebar" radius="md" p="lg">
+            <div className="photoWrap">
+              <Image src={cv.photo} alt={`${cv.name} headshot`} fit="cover" />
+            </div>
+
+            <Stack gap={6} mt="md">
+              <Title order={2}>{cv.name}</Title>
+              <Text c="dimmed" className="headline">
+                {cv.headline}
+              </Text>
+              <Text size="sm" c="dimmed">
+                {cv.address}
+              </Text>
+            </Stack>
+
+            <Stack gap={6} mt="md">
+              {cv.contacts.map((contact) => (
+                <Anchor key={contact.label} href={contact.href} className="sideLink">
+                  {contact.value}
+                </Anchor>
+              ))}
+              {cv.links.map((link) => (
+                <Anchor
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="sideLink"
+                >
+                  {link.label}
+                </Anchor>
+              ))}
+            </Stack>
+          </Paper>
+
+          <Stack className="cvColumn" gap="xl">
+            <Stack gap={6}>
+              <Title order={1}>Curriculum Vitae</Title>
+              <Text c="dimmed">{cv.summary}</Text>
+            </Stack>
+
+            {cv.sections.map((section) => (
+              <Section key={section.title} title={section.title}>
+                <Stack gap="md">
+                  {section.items.map((item) => (
+                    <Stack key={item.title} gap={6}>
+                      <Title order={4}>{item.title}</Title>
+                      <Text size="sm" c="dimmed">
+                        {item.meta}
+                      </Text>
+                      {item.body.length ? (
+                        <List spacing={4} size="sm">
+                          {item.body.map((b) => (
+                            <List.Item key={b}>{b}</List.Item>
+                          ))}
+                        </List>
+                      ) : null}
+                    </Stack>
+                  ))}
+                </Stack>
+              </Section>
             ))}
-            <a className="sideLink" href={cv.website} target="_blank" rel="noreferrer">
-              {cv.website.replace('https://', '')}
-            </a>
-            {cv.links.map((link) => (
-              <a
-                key={link.label}
-                className="sideLink"
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </aside>
 
-        <section className="cvColumn">
-          <header className="cvHeader">
-            <h1 className="cvTitle">Curriculum Vitae</h1>
-            <p className="cvSummary">{cv.summary}</p>
-          </header>
-
-          {cv.sections.map((section) => (
-            <Section
-              key={section.title}
-              id={toId(section.title)}
-              title={section.title}
-            >
-              <div className="stack">
-                {section.items.map((item) => (
-                  <article key={item.title} className="cvItem">
-                    <div className="cvItemTitle">{item.title}</div>
-                    <div className="cvItemMeta">{item.meta}</div>
-                    {item.body.length ? (
-                      <ul className="bullets">
-                        {item.body.map((b) => (
-                          <li key={b}>{b}</li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </article>
-                ))}
-              </div>
-            </Section>
-          ))}
-
-          <footer className="footer">
-            <span>Last updated {cv.lastUpdated}</span>
-          </footer>
-        </section>
-      </main>
+            <Text size="xs" c="dimmed">
+              Last updated {cv.lastUpdated}
+            </Text>
+          </Stack>
+        </div>
+      </Container>
     </div>
   )
 }

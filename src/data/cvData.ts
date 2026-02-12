@@ -4,7 +4,6 @@ export const cv = {
   location: 'Mississauga, Ontario',
   address: 'Mississauga, Ontario',
   email: 'parandorenko@gmail.com',
-  website: 'https://bold.pro/my/peter-arandorenko/309r',
   photo: '/profile.jpg',
   lastUpdated: '2026-02-12',
   contacts: [
@@ -22,14 +21,14 @@ export const cv = {
       title: 'Work Experience',
       items: [
         {
-          title: 'Sr Applications Engineer, AI Solutions',
+          title: 'Principal Software Applications Engineer - Generative AI',
           meta: 'TELUS Health | TELUS Sante - Toronto, ON - Sept 2024 - Present',
           body: [
-            'Integrate AI solutions (Palantir, Azure, GCP) to enhance roadmap, deliver insights, and reduce costs.',
-            'Built LLM-powered applications for healthcare delivery with measurable outcomes.',
-            'Delivered pension AI copilot in Palantir for hundreds of clients, saving ~$225K in headcount costs per 200 clients per year.',
-            'Delivered copilot for Defined Benefits development team in Azure with ~$300K/year cost savings.',
-            'Experienced in RAG and function-calling models, evaluation, and prompt engineering with Claude, Gemini, and GPT-4o.',
+            'Led AI integration across GCP, Azure, and Palantir to deliver roadmap capabilities, insights, and cost reduction for internal and external customers.',
+            'Delivered pension AI copilot in Palantir for hundreds of clients, saving ~$225K in headcount per 200 clients per year and improving adversarial tests by 80%.',
+            'Delivered Azure web app copilot for Ariel EAS Defined Benefits team, saving ~$300K/year with LLM engineering (semantic kernel, embeddings, hybrid search, vector DBs).',
+            'Delivered GCP incident-report summarization app, saving ~$400K/year; handled restricted content using GCP SDP DLP deidentification and secure workflows.',
+            'Built and optimized RAG and function-calling LLM apps using GCP, Azure Foundry, Palantir Foundry & AIP, Python/TS, Git/Linux, and LLM evaluation.',
           ],
         },
         {
@@ -181,11 +180,6 @@ export const cv = {
           meta: 'September 11, 2024',
           body: [],
         },
-        {
-          title: 'Foundry AI Engineer Track',
-          meta: 'In Progress',
-          body: [],
-        },
       ],
     },
     {
@@ -193,7 +187,17 @@ export const cv = {
       items: [
         {
           title: 'References Available',
-          meta: '5+ Patents',
+          meta: '',
+          body: [],
+        },
+      ],
+    },
+    {
+      title: 'Patents',
+      items: [
+        {
+          title: '5+ Patents',
+          meta: '',
           body: [],
         },
       ],
