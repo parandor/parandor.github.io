@@ -1,6 +1,6 @@
 export const cv = {
   name: 'Peter Arandorenko',
-  headline: 'AI | Solutions Architect | Robotics | AV | CV | Innovation',
+  headline: 'Generative AI, Solutions Architecture, Robotics, AMR, CV, Innovation',
   location: 'Mississauga, Ontario',
   address: 'Mississauga, Ontario',
   email: 'parandorenko@gmail.com',

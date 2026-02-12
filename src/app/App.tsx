@@ -16,8 +16,8 @@ import { cv } from '../data/cvData'
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <Stack gap={8}>
-      <Group gap="xs">
-        <Badge variant="light" color="dark">
+      <Group gap="sm" align="center">
+        <Badge variant="outline" color="dark" radius="xl" size="lg">
           {title}
         </Badge>
         <Divider style={{ flex: 1 }} />
@@ -39,9 +39,17 @@ export default function App() {
 
             <Stack gap={6} mt="md">
               <Title order={2}>{cv.name}</Title>
-              <Text c="dimmed" className="headline">
-                {cv.headline}
-              </Text>
+              <Stack gap={6} align="center" className="headlineBubbles">
+                {cv.headline.split(',').map((item) => {
+                  const label = item.trim()
+                  if (!label) return null
+                  return (
+                    <Badge key={label} variant="light" color="dark" radius="xl">
+                      {label}
+                    </Badge>
+                  )
+                })}
+              </Stack>
               <Text size="sm" c="dimmed">
                 {cv.address}
               </Text>

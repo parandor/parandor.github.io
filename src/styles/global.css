@@ -109,21 +109,9 @@ a:hover {
   word-break: break-word;
 }
 
-.headline {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  word-spacing: 0.18em;
-  text-align: justify;
-  text-align-last: justify;
-  display: block;
-  text-wrap: balance;
-}
-
-.headline::after {
-  content: '';
-  display: inline-block;
-  width: 100%;
+.headlineBubbles {
+  margin-top: 4px;
+  justify-content: center;
 }
 
 .sideLink:hover {
