@@ -134,7 +134,7 @@ export const cv = {
         },
         {
           title: 'AI Platforms',
-          meta: 'Azure AI Foundry, Palantir Foundry, AIP',
+          meta: 'Fuel-iX, Azure AI Foundry, Palantir Foundry (AIP)',
           body: [],
         },
         {
@@ -159,7 +159,12 @@ export const cv = {
         },
         {
           title: 'Languages',
-          meta: 'C++ (10+ yrs), Python (7+), Go (3+), SQL (2+), MATLAB (3+)',
+          meta: 'C++ (10+ yrs), Python (7+), Terraform, Go (3+), SQL (2+), MATLAB (3+)',
+          body: [],
+        },
+        {
+          title: 'Full-Stack',
+          meta: 'Node.js, TypeScript, Vite, React',
           body: [],
         },
         {

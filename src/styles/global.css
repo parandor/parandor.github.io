@@ -67,6 +67,22 @@ a:hover {
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .sidebar {
+    position: static;
+    padding: 18px;
+  }
+
+  .photoWrap {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .cvColumn {
+    max-width: 100%;
+    margin-left: 0;
   }
 }
 
