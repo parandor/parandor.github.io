@@ -92,9 +92,24 @@ export default function App() {
                       </Text>
                       {item.body.length ? (
                         <List spacing={4} size="sm">
-                          {item.body.map((b) => (
-                            <List.Item key={b}>{b}</List.Item>
-                          ))}
+                          {item.body.map((b) => {
+                            if (typeof b === 'string') {
+                              return <List.Item key={b}>{b}</List.Item>
+                            }
+
+                            return (
+                              <List.Item key={b.text}>
+                                {b.text}
+                                {b.sub?.length ? (
+                                  <List spacing={4} size="sm" mt={6} withPadding>
+                                    {b.sub.map((sub) => (
+                                      <List.Item key={sub}>{sub}</List.Item>
+                                    ))}
+                                  </List>
+                                ) : null}
+                              </List.Item>
+                            )
+                          })}
                         </List>
                       ) : null}
                     </Stack>

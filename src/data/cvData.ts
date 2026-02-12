@@ -25,9 +25,21 @@ export const cv = {
           meta: 'TELUS Health | TELUS Sante - Toronto, ON - Sept 2024 - Present',
           body: [
             'Led AI integration across GCP, Azure, and Palantir to deliver roadmap capabilities, insights, and cost reduction for internal and external customers.',
-            'Delivered pension AI copilot in Palantir for hundreds of clients, saving ~$225K in headcount per 200 clients per year and improving adversarial tests by 80%.',
-            'Delivered Azure web app copilot for Ariel EAS Defined Benefits team, saving ~$300K/year with LLM engineering (semantic kernel, embeddings, hybrid search, vector DBs).',
-            'Delivered GCP incident-report summarization app, saving ~$400K/year; handled restricted content using GCP SDP DLP deidentification and secure workflows.',
+            'Delivered PensionIQ (pension AI copilot) in Palantir for hundreds of clients, saving ~$225K in headcount per 200 clients per year and improving adversarial tests by 80%.',
+            {
+              text: 'Led end-to-end delivery of the ArielDB copilot integrating SharePoint TDDs and Azure DevOps artifacts into 8 custom indexes; enabled Q&A over ~2,000 TDDs and ~600K ADO content items.',
+              sub: [
+                'Owned frontend/backend, AKS deployment, and weekly refresh pipeline with manual data validation; saved ~$300K/year via LLM engineering (semantic kernel, embeddings, hybrid search, vector DBs).',
+              ],
+            },
+            {
+              text: 'Delivered CIR (Critical Incident Report Generation) app on GCP, saving ~$400K/year; handled restricted content using GCP SDP DLP deidentification and secure workflows.',
+              sub: [
+                'Deployed and managed 4 environments (dev/qa/stg/prod) using DevSecOps best practices, with infrastructure defined in a separate repo and deployed via Terraform.',
+                'Provisioned GCP infrastructure/services end-to-end; built frontend/backend and DLP de-id/re-id pipeline.',
+                'Built a 30+ page notes summarizer with two templates and PDF layout report generation.',
+              ],
+            },
             'Built and optimized RAG and function-calling LLM apps using GCP, Azure Foundry, Palantir Foundry & AIP, Python/TS, Git/Linux, and LLM evaluation.',
           ],
         },
