@@ -41,6 +41,7 @@ export const cv = {
               ],
             },
             'Built and optimized RAG and function-calling LLM apps using GCP, Azure Foundry, Palantir Foundry & AIP, Python/TS, Git/Linux, and LLM evaluation.',
+            'Tech stack: GCP, Azure, Palantir Foundry (AIP), Python, TypeScript, Node.js, React, AKS, Terraform, Semantic Kernel, vector DBs, hybrid search, LLM evaluation.',
           ],
         },
         {
