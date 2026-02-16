@@ -31,10 +31,7 @@ body {
     Helvetica,
     Arial,
     sans-serif;
-  background:
-    radial-gradient(900px 520px at 15% -10%, rgba(214, 199, 170, 0.35), transparent 60%),
-    radial-gradient(700px 420px at 90% 0%, rgba(120, 146, 160, 0.18), transparent 55%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
+  background: #f7f5f0;
   color: var(--text);
 }
 
@@ -66,23 +63,27 @@ a:hover {
 
 @media (max-width: 900px) {
   .layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
   }
 
   .sidebar {
-    position: static;
-    padding: 18px;
+    position: static !important;
+    z-index: 0 !important;
+    padding: 18px !important;
+    width: 100% !important;
+    border-radius: 14px !important;
   }
 
   .photoWrap {
-    max-width: 260px;
-    margin: 0 auto;
+    max-width: 260px !important;
+    margin: 0 auto !important;
   }
 
   .cvColumn {
-    max-width: 100%;
-    margin-left: 0;
+    max-width: 100% !important;
+    margin-left: 0 !important;
   }
 }
 
@@ -137,6 +138,13 @@ a:hover {
 .cvColumn {
   max-width: var(--contentMax);
   margin-left: auto;
+}
+
+.sectionBlock {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid var(--cardBorder);
 }
 
 .cvHeader {

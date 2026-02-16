@@ -15,7 +15,7 @@ import { cv } from '../data/cvData'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <Stack gap={8}>
+    <Stack gap={8} className="sectionBlock">
       <Group gap="sm" align="center">
         <Badge variant="outline" color="dark" radius="xl" size="lg">
           {title}
