@@ -107,7 +107,8 @@ export const cv = {
           title: 'Independent Project (Self-Employed)',
           meta: 'Technical Lead - 11/2023 - 03/2024',
           body: [
-            'Designed, implemented, and deployed to GKE a containerized web solution using PaaS.',
+            'Designed and delivered a web app for an HVAC services supplier; containerized and deployed on GCP/GKE.',
+            'Tech stack: Docker, Python, JavaScript, Flask, GCP, GKE, Kubernetes.',
           ],
         },
       ],
